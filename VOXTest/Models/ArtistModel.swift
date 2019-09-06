@@ -10,7 +10,7 @@ import Foundation
 
 
 struct Album: Decodable {
-  let album: [DetailAlbumInfo]?
+  let album: [DetailAlbumInfo]
 }
 
 struct DetailAlbumInfo: Decodable {

@@ -20,6 +20,8 @@
 		83F9DD0B23226A2A001D9278 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F9DD0A23226A2A001D9278 /* NetworkManager.swift */; };
 		83F9DD0D232296CF001D9278 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F9DD0C232296CF001D9278 /* NetworkDataFetcher.swift */; };
 		83F9DD1023229834001D9278 /* ArtistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F9DD0F23229834001D9278 /* ArtistModel.swift */; };
+		83F9DD132322A5A9001D9278 /* WebImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F9DD122322A5A9001D9278 /* WebImageView.swift */; };
+		83F9DD152322BFED001D9278 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F9DD142322BFED001D9278 /* String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		83F9DD0A23226A2A001D9278 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		83F9DD0C232296CF001D9278 /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
 		83F9DD0F23229834001D9278 /* ArtistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistModel.swift; sourceTree = "<group>"; };
+		83F9DD122322A5A9001D9278 /* WebImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebImageView.swift; sourceTree = "<group>"; };
+		83F9DD142322BFED001D9278 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,12 +75,12 @@
 			isa = PBXGroup;
 			children = (
 				83F9DD0823226362001D9278 /* main */,
+				83F9DD1123229CA8001D9278 /* Models */,
 				83F9DD0323225E2C001D9278 /* Views */,
 				83F9DD0223225E22001D9278 /* Controllers */,
 				83F9DD0923226396001D9278 /* Support files */,
-				83F9DCFF23225B88001D9278 /* CoreData */,
 				83F9DD0E232296E2001D9278 /* Services */,
-				83F9DD0F23229834001D9278 /* ArtistModel.swift */,
+				83F9DCFF23225B88001D9278 /* CoreData */,
 			);
 			path = VOXTest;
 			sourceTree = "<group>";
@@ -85,6 +89,8 @@
 			isa = PBXGroup;
 			children = (
 				83F9DCFA23225322001D9278 /* UIViewController.swift */,
+				83F9DD122322A5A9001D9278 /* WebImageView.swift */,
+				83F9DD142322BFED001D9278 /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -142,6 +148,14 @@
 				83F9DD0A23226A2A001D9278 /* NetworkManager.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		83F9DD1123229CA8001D9278 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				83F9DD0F23229834001D9278 /* ArtistModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,8 +231,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				83F9DD0D232296CF001D9278 /* NetworkDataFetcher.swift in Sources */,
+				83F9DD152322BFED001D9278 /* String.swift in Sources */,
 				83F9DCF923225262001D9278 /* TabBarController.swift in Sources */,
 				83F9DCE42322523B001D9278 /* AppDelegate.swift in Sources */,
+				83F9DD132322A5A9001D9278 /* WebImageView.swift in Sources */,
 				83F9DCEC2322523B001D9278 /* VOXTest.xcdatamodeld in Sources */,
 				83F9DD1023229834001D9278 /* ArtistModel.swift in Sources */,
 				83F9DD0B23226A2A001D9278 /* NetworkManager.swift in Sources */,

@@ -17,13 +17,47 @@
                     <view key="view" contentMode="scaleToFill" id="sR4-6a-mPc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZT8-7i-vBg">
+                                <rect key="frame" x="16" y="68" width="265" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C0f-e1-Red">
+                                <rect key="frame" x="291" y="68" width="70" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Search">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="searchButtonTapped:" destination="Jfo-Xf-Y2h" eventType="touchUpInside" id="sCn-3p-O0B"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gxg-pM-JuX">
+                                <rect key="frame" x="67" y="239" width="240" height="241"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Gxg-pM-JuX" firstAttribute="top" secondItem="slC-Hh-oFW" secondAttribute="top" constant="219" id="5lr-zR-PMK"/>
+                            <constraint firstItem="slC-Hh-oFW" firstAttribute="bottom" secondItem="Gxg-pM-JuX" secondAttribute="bottom" constant="187" id="J1n-Lp-Myc"/>
+                            <constraint firstItem="slC-Hh-oFW" firstAttribute="trailing" secondItem="Gxg-pM-JuX" secondAttribute="trailing" constant="68" id="cOB-g3-6eY"/>
+                            <constraint firstItem="Gxg-pM-JuX" firstAttribute="leading" secondItem="slC-Hh-oFW" secondAttribute="leading" constant="67" id="iKz-tL-2th"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="slC-Hh-oFW"/>
                     </view>
+                    <connections>
+                        <outlet property="albumimageview" destination="Gxg-pM-JuX" id="3m3-gu-dYE"/>
+                        <outlet property="searchButton" destination="C0f-e1-Red" id="rYs-vU-Fh8"/>
+                        <outlet property="searchTextField" destination="ZT8-7i-vBg" id="ULs-V3-jEc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eiw-tN-T7D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1" y="-35"/>
+            <point key="canvasLocation" x="0.80000000000000004" y="-35.532233883058474"/>
         </scene>
     </scenes>
 </document>
