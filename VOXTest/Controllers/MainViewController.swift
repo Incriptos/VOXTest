@@ -10,6 +10,7 @@ import UIKit
 
 class MainViewController: UIViewController {
 
+  let fetcher = NetworkDataFetcher()
   
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +18,10 @@ class MainViewController: UIViewController {
         // Do any additional setup after loading the view.
       
       view.backgroundColor = .orange
+      
+      fetcher.fetchAlbums(artistName: "post_malone", albumName: "stoney") { (result) in
+        print(result)
+      }
       
     }
   

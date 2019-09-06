@@ -17,6 +17,9 @@
 		83F9DD0123225BA4001D9278 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F9DD0023225BA4001D9278 /* MainViewController.swift */; };
 		83F9DD052322610E001D9278 /* HistoryViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83F9DD042322610E001D9278 /* HistoryViewController.storyboard */; };
 		83F9DD0723226125001D9278 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F9DD0623226125001D9278 /* HistoryViewController.swift */; };
+		83F9DD0B23226A2A001D9278 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F9DD0A23226A2A001D9278 /* NetworkManager.swift */; };
+		83F9DD0D232296CF001D9278 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F9DD0C232296CF001D9278 /* NetworkDataFetcher.swift */; };
+		83F9DD1023229834001D9278 /* ArtistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F9DD0F23229834001D9278 /* ArtistModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		83F9DD0023225BA4001D9278 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		83F9DD042322610E001D9278 /* HistoryViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HistoryViewController.storyboard; sourceTree = "<group>"; };
 		83F9DD0623226125001D9278 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		83F9DD0A23226A2A001D9278 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		83F9DD0C232296CF001D9278 /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
+		83F9DD0F23229834001D9278 /* ArtistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,15 +70,13 @@
 		83F9DCE22322523B001D9278 /* VOXTest */ = {
 			isa = PBXGroup;
 			children = (
-				83F9DCE32322523B001D9278 /* AppDelegate.swift */,
-				83F9DCED2322523C001D9278 /* Assets.xcassets */,
-				83F9DCEF2322523C001D9278 /* LaunchScreen.storyboard */,
-				83F9DCF22322523C001D9278 /* Info.plist */,
-				83F9DCFF23225B88001D9278 /* CoreData */,
-				83F9DCF823225262001D9278 /* TabBarController.swift */,
-				83F9DCFC2322549C001D9278 /* Extensions */,
+				83F9DD0823226362001D9278 /* main */,
 				83F9DD0323225E2C001D9278 /* Views */,
 				83F9DD0223225E22001D9278 /* Controllers */,
+				83F9DD0923226396001D9278 /* Support files */,
+				83F9DCFF23225B88001D9278 /* CoreData */,
+				83F9DD0E232296E2001D9278 /* Services */,
+				83F9DD0F23229834001D9278 /* ArtistModel.swift */,
 			);
 			path = VOXTest;
 			sourceTree = "<group>";
@@ -96,6 +100,7 @@
 		83F9DD0223225E22001D9278 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				83F9DCF823225262001D9278 /* TabBarController.swift */,
 				83F9DD0023225BA4001D9278 /* MainViewController.swift */,
 				83F9DD0623226125001D9278 /* HistoryViewController.swift */,
 			);
@@ -105,10 +110,38 @@
 		83F9DD0323225E2C001D9278 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				83F9DCEF2322523C001D9278 /* LaunchScreen.storyboard */,
 				83F9DCFD232256E4001D9278 /* MainViewController.storyboard */,
 				83F9DD042322610E001D9278 /* HistoryViewController.storyboard */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		83F9DD0823226362001D9278 /* main */ = {
+			isa = PBXGroup;
+			children = (
+				83F9DCE32322523B001D9278 /* AppDelegate.swift */,
+			);
+			path = main;
+			sourceTree = "<group>";
+		};
+		83F9DD0923226396001D9278 /* Support files */ = {
+			isa = PBXGroup;
+			children = (
+				83F9DCFC2322549C001D9278 /* Extensions */,
+				83F9DCED2322523C001D9278 /* Assets.xcassets */,
+				83F9DCF22322523C001D9278 /* Info.plist */,
+			);
+			path = "Support files";
+			sourceTree = "<group>";
+		};
+		83F9DD0E232296E2001D9278 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				83F9DD0C232296CF001D9278 /* NetworkDataFetcher.swift */,
+				83F9DD0A23226A2A001D9278 /* NetworkManager.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,9 +216,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83F9DD0D232296CF001D9278 /* NetworkDataFetcher.swift in Sources */,
 				83F9DCF923225262001D9278 /* TabBarController.swift in Sources */,
 				83F9DCE42322523B001D9278 /* AppDelegate.swift in Sources */,
 				83F9DCEC2322523B001D9278 /* VOXTest.xcdatamodeld in Sources */,
+				83F9DD1023229834001D9278 /* ArtistModel.swift in Sources */,
+				83F9DD0B23226A2A001D9278 /* NetworkManager.swift in Sources */,
 				83F9DD0723226125001D9278 /* HistoryViewController.swift in Sources */,
 				83F9DCFB23225322001D9278 /* UIViewController.swift in Sources */,
 				83F9DD0123225BA4001D9278 /* MainViewController.swift in Sources */,
@@ -328,7 +364,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UBGU9698UC;
-				INFOPLIST_FILE = VOXTest/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/VOXTest/Support files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -336,7 +372,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.andrewVashulenko.VOXTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -346,7 +382,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UBGU9698UC;
-				INFOPLIST_FILE = VOXTest/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/VOXTest/Support files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -354,7 +390,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.andrewVashulenko.VOXTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
