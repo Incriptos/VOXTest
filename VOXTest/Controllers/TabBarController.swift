@@ -15,13 +15,11 @@ final class TabBarController: UITabBarController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    view.backgroundColor = .gray
-    
-    
     let mainViewController: MainViewController = MainViewController.loadFromStoryboard()
     let historyViewController: HistoryViewController = HistoryViewController.loadFromStoryboard()
     
-    viewControllers = [generateNavigationController(rootViewController: mainViewController, title: "Main", image: #imageLiteral(resourceName: "image")),
+    viewControllers = [generateNavigationController(rootViewController: mainViewController,
+                                                    title: "Main", image: #imageLiteral(resourceName: "image")),
     generateNavigationController(rootViewController: historyViewController, title: "History", image: #imageLiteral(resourceName: "history"))]
   }
   

@@ -42,7 +42,6 @@ class MainViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    view.backgroundColor = .lightGray
     searchTextField.delegate = self
     searchButton.isEnabled = false
     

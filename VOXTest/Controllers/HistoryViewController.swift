@@ -46,7 +46,7 @@ final class HistoryViewController: UIViewController {
     tableView.backgroundColor = .clear
     
     tableView.rowHeight = UITableView.automaticDimension
-    tableView.estimatedRowHeight = 50
+    
   }
   
   private func fetchDataFromCoreData() {
@@ -66,9 +66,11 @@ extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
     return history.count
   }
   
+  
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
     let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+    cell.selectionStyle = .none
     
     let object = history[indexPath.row]
     

@@ -96,6 +96,7 @@
 		83F9DCFC2322549C001D9278 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				838B822723254C830085D57F /* GradientView.swift */,
 				83F9DCFA23225322001D9278 /* UIViewController.swift */,
 				83F9DD122322A5A9001D9278 /* WebImageView.swift */,
 				83F9DD142322BFED001D9278 /* String.swift */,
@@ -147,7 +148,6 @@
 				83F9DCFC2322549C001D9278 /* Extensions */,
 				83F9DCED2322523C001D9278 /* Assets.xcassets */,
 				83F9DCF22322523C001D9278 /* Info.plist */,
-				838B822723254C830085D57F /* GradientView.swift */,
 			);
 			path = "Support files";
 			sourceTree = "<group>";

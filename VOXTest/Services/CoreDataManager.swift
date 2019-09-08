@@ -9,7 +9,6 @@
 import UIKit
 import CoreData
 
-
 final class PersistenceManager {
   private init() {}
   static let shared = PersistenceManager()

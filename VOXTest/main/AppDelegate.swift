@@ -25,17 +25,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     return true
   }
   
-//  func applicationDidEnterBackground(_ application: UIApplication) {
-//    ///Clear CoreData
-//    let persistenceManager = PersistenceManager.shared
-//    let DelAllReqVar = NSBatchDeleteRequest(fetchRequest: NSFetchRequest<NSFetchRequestResult>(entityName: ""))
-//    do {
-//      try persistenceManager.context.execute(DelAllReqVar)
-//    }
-//    catch {
-//      print(error)
-//    }
-//  }
+  func applicationDidEnterBackground(_ application: UIApplication) {
+    
+    ///Clear CoreData
+    let persistenceManager = PersistenceManager.shared
+    let DelAllReqVar = NSBatchDeleteRequest(fetchRequest: NSFetchRequest<NSFetchRequestResult>(entityName: "CoreHistory"))
+    do {
+      try persistenceManager.context.execute(DelAllReqVar)
+    }
+    catch {
+      print(error)
+    }
+    
+  }
 
   
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class NetworkDataFetcher {
+final class NetworkDataFetcher {
   
   var networkManager = NetworkManager()
   
