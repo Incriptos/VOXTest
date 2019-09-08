@@ -74,7 +74,7 @@ extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
     
     let object = history[indexPath.row]
     
-    cell.textLabel?.text = "\(object.artistName!) : \(object.albumName!)"
+    cell.textLabel?.text = "\(object.artistName!): \(object.albumName!)"
     
     return cell
   }

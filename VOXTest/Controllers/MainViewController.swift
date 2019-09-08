@@ -14,6 +14,7 @@ class MainViewController: UIViewController {
   @IBOutlet weak var searchTextField: UITextField!
   @IBOutlet weak var searchButton: UIButton!
   @IBOutlet weak var albumimageview: UIImageView!
+  @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
   
   private let fetcher = NetworkDataFetcher()
   private let persistenceManager = PersistenceManager.shared
@@ -24,7 +25,6 @@ class MainViewController: UIViewController {
   //MARK: - Life cycle
   
   override func viewWillLayoutSubviews() {
-    
     searchButton.layer.cornerRadius = 10
     searchButton.layer.shadowColor =  UIColor.black.cgColor
     searchButton.layer.shadowOpacity = 0.3
@@ -35,8 +35,6 @@ class MainViewController: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     setupNavigation()
-    navigationController?.navigationBar.isHidden = true
-    
   }
   
   override func viewDidLoad() {
@@ -44,12 +42,14 @@ class MainViewController: UIViewController {
     
     searchTextField.delegate = self
     searchButton.isEnabled = false
+    activityIndicator.stopAnimating()
     
   }
   
   //MARK: - Private funcs
   
  private func setupNavigation() {
+    navigationController?.navigationBar.isHidden = true
     let topBar = UIView(frame: UIApplication.shared.statusBarFrame)
     topBar.backgroundColor = .white
     topBar.layer.shadowColor =  UIColor.black.cgColor
@@ -60,6 +60,7 @@ class MainViewController: UIViewController {
   }
   
   private func fetchData() {
+    activityIndicator.startAnimating()
     fetcher.fetchAlbums(artistName: artistName, albumName: albumName) { [weak self] (result) in
       
       guard let resultData = result else {
@@ -74,6 +75,7 @@ class MainViewController: UIViewController {
       
       guard let imgSrt = resultData.album.first?.strAlbumThumb else { return }
       self?.albumimageview.downloaded(from: imgSrt)
+      self?.activityIndicator.stopAnimating()
       
     }
   }
