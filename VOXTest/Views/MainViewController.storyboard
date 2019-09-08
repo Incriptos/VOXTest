@@ -88,6 +88,7 @@
                         <outlet property="activityIndicator" destination="OF5-Cg-ysM" id="sCz-pe-L4B"/>
                         <outlet property="albumimageview" destination="Gxg-pM-JuX" id="3m3-gu-dYE"/>
                         <outlet property="searchButton" destination="C0f-e1-Red" id="rYs-vU-Fh8"/>
+                        <outlet property="searchStack" destination="t65-cU-VK5" id="ymU-pX-snn"/>
                         <outlet property="searchTextField" destination="ZT8-7i-vBg" id="ULs-V3-jEc"/>
                     </connections>
                 </viewController>

@@ -11,6 +11,7 @@ import CoreData
 
 class MainViewController: UIViewController {
   
+  @IBOutlet weak var searchStack: UIStackView!
   @IBOutlet weak var searchTextField: UITextField!
   @IBOutlet weak var searchButton: UIButton!
   @IBOutlet weak var albumimageview: UIImageView!
@@ -29,17 +30,13 @@ class MainViewController: UIViewController {
     searchButton.layer.shadowColor =  UIColor.black.cgColor
     searchButton.layer.shadowOpacity = 0.3
     searchButton.layer.shadowOffset = CGSize.zero
-    searchButton.layer.shadowRadius = 8
-  }
-  
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-    setupNavigation()
+    searchButton.layer.shadowRadius = 2
   }
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    setupNavigation()
     searchTextField.delegate = self
     searchButton.isEnabled = false
     activityIndicator.stopAnimating()
@@ -49,7 +46,7 @@ class MainViewController: UIViewController {
   //MARK: - Private funcs
   
  private func setupNavigation() {
-    navigationController?.navigationBar.isHidden = true
+    navigationItem.titleView = searchStack
     let topBar = UIView(frame: UIApplication.shared.statusBarFrame)
     topBar.backgroundColor = .white
     topBar.layer.shadowColor =  UIColor.black.cgColor
@@ -68,7 +65,6 @@ class MainViewController: UIViewController {
         self?.present(alertContoller, animated: true)
         let when = DispatchTime.now() + 1.5
         DispatchQueue.main.asyncAfter(deadline: when) {
-          
           alertContoller.dismiss(animated: true, completion: nil)
         }
         return }
@@ -98,11 +94,9 @@ class MainViewController: UIViewController {
   //MARK: - Actions
   
   @IBAction func searchButtonTapped(_ sender: Any) {
-
     separateSearch()
     fetchData()
     saveObjectInCoreData()
-    
   }
   
 }

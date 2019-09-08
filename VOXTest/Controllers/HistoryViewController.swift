@@ -66,11 +66,18 @@ extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
     return history.count
   }
   
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
+    let object = history[indexPath.row]
+    
+    let mainViewController: MainViewController = MainViewController.loadFromStoryboard()
+    
+
+  }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
     let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-    cell.selectionStyle = .none
     
     let object = history[indexPath.row]
     
