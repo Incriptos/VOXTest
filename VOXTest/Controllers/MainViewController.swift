@@ -7,17 +7,29 @@
 //
 
 import UIKit
+import CoreData
 
 class MainViewController: UIViewController {
   
   @IBOutlet weak var searchTextField: UITextField!
   @IBOutlet weak var searchButton: UIButton!
   @IBOutlet weak var albumimageview: UIImageView!
-    
-  private let fetcher = NetworkDataFetcher()
   
- private var artistName = ""
- private var albumName = ""
+  private let fetcher = NetworkDataFetcher()
+  private let persistenceManager = PersistenceManager.shared
+  
+  private var artistName = ""
+  private var albumName = ""
+  
+  //MARK: - Life cycle
+  
+  override func viewWillLayoutSubviews() {
+    searchButton.layer.cornerRadius = 10
+    searchButton.layer.shadowColor =  UIColor.black.cgColor
+    searchButton.layer.shadowOpacity = 0.3
+    searchButton.layer.shadowOffset = CGSize.zero
+    searchButton.layer.shadowRadius = 8
+  }
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
@@ -35,6 +47,8 @@ class MainViewController: UIViewController {
     
   }
   
+  //MARK: - Private funcs
+  
  private func setupNavigation() {
     let topBar = UIView(frame: UIApplication.shared.statusBarFrame)
     topBar.backgroundColor = .white
@@ -48,12 +62,13 @@ class MainViewController: UIViewController {
   private func fetchData() {
     fetcher.fetchAlbums(artistName: artistName, albumName: albumName) { [weak self] (result) in
       
-      guard let imgSrt = result!.album.first?.strAlbumThumb else { return }
+      guard let resultData = result else { return }
+      guard let imgSrt = resultData.album.first?.strAlbumThumb else { return }
       self?.albumimageview.downloaded(from: imgSrt)
     }
   }
   
-  func separateSearch() {
+ private func separateSearch() {
       let userSearch = searchTextField.text!
       let separators = CharacterSet(charactersIn: "-:|~//\\")
       var searchParts = userSearch.components(separatedBy: separators)
@@ -62,16 +77,26 @@ class MainViewController: UIViewController {
       print("artist is \(artistName), album is \(albumName)")
     }
   
+ private func saveObjectInCoreData() {
+    let coreResult = CoreHistory(context: self.persistenceManager.context)
+    coreResult.albumName = albumName
+    coreResult.artistName = artistName
+    self.persistenceManager.save()
+  }
+  
+  //MARK: - Actions
   
   @IBAction func searchButtonTapped(_ sender: Any) {
 
     separateSearch()
     fetchData()
+    saveObjectInCoreData()
     
   }
   
 }
 
+//MARK: - UITextField Delegate
 
 extension MainViewController: UITextFieldDelegate {
   
