@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		838B8223232533500085D57F /* CoreHistory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838B8221232533500085D57F /* CoreHistory+CoreDataClass.swift */; };
 		838B8224232533500085D57F /* CoreHistory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838B8222232533500085D57F /* CoreHistory+CoreDataProperties.swift */; };
+		838B822823254C830085D57F /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838B822723254C830085D57F /* GradientView.swift */; };
 		83F9DCE42322523B001D9278 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F9DCE32322523B001D9278 /* AppDelegate.swift */; };
 		83F9DCEC2322523B001D9278 /* VOXTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 83F9DCEA2322523B001D9278 /* VOXTest.xcdatamodeld */; };
 		83F9DCEE2322523C001D9278 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83F9DCED2322523C001D9278 /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		838B8221232533500085D57F /* CoreHistory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreHistory+CoreDataClass.swift"; sourceTree = "<group>"; };
 		838B8222232533500085D57F /* CoreHistory+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreHistory+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		838B822723254C830085D57F /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		83F9DCE02322523B001D9278 /* VOXTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VOXTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83F9DCE32322523B001D9278 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83F9DCEB2322523B001D9278 /* VOXTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VOXTest.xcdatamodel; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				83F9DCFC2322549C001D9278 /* Extensions */,
 				83F9DCED2322523C001D9278 /* Assets.xcassets */,
 				83F9DCF22322523C001D9278 /* Info.plist */,
+				838B822723254C830085D57F /* GradientView.swift */,
 			);
 			path = "Support files";
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 			files = (
 				83F9DD0D232296CF001D9278 /* NetworkDataFetcher.swift in Sources */,
 				838B8224232533500085D57F /* CoreHistory+CoreDataProperties.swift in Sources */,
+				838B822823254C830085D57F /* GradientView.swift in Sources */,
 				83F9DD152322BFED001D9278 /* String.swift in Sources */,
 				83F9DCF923225262001D9278 /* TabBarController.swift in Sources */,
 				83F9DCE42322523B001D9278 /* AppDelegate.swift in Sources */,

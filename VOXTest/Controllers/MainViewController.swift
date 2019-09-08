@@ -24,6 +24,7 @@ class MainViewController: UIViewController {
   //MARK: - Life cycle
   
   override func viewWillLayoutSubviews() {
+    
     searchButton.layer.cornerRadius = 10
     searchButton.layer.shadowColor =  UIColor.black.cgColor
     searchButton.layer.shadowOpacity = 0.3
@@ -62,9 +63,19 @@ class MainViewController: UIViewController {
   private func fetchData() {
     fetcher.fetchAlbums(artistName: artistName, albumName: albumName) { [weak self] (result) in
       
-      guard let resultData = result else { return }
+      guard let resultData = result else {
+        let alertContoller = UIAlertController(title: "Error!", message: "Search error", preferredStyle: .alert)
+        self?.present(alertContoller, animated: true)
+        let when = DispatchTime.now() + 1.5
+        DispatchQueue.main.asyncAfter(deadline: when) {
+          
+          alertContoller.dismiss(animated: true, completion: nil)
+        }
+        return }
+      
       guard let imgSrt = resultData.album.first?.strAlbumThumb else { return }
       self?.albumimageview.downloaded(from: imgSrt)
+      
     }
   }
   
@@ -74,7 +85,6 @@ class MainViewController: UIViewController {
       var searchParts = userSearch.components(separatedBy: separators)
       artistName = searchParts[0].trim()
       albumName = searchParts[1].trim()
-      print("artist is \(artistName), album is \(albumName)")
     }
   
  private func saveObjectInCoreData() {
