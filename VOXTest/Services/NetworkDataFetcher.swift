@@ -9,8 +9,10 @@
 import Foundation
 
 final class NetworkDataFetcher {
+  private init() {}
+  static let shared = NetworkDataFetcher()
   
-  var networkManager = NetworkManager()
+  var networkManager = NetworkManager.shared
   
   func fetchAlbums(artistName: String, albumName: String, completion: @escaping (Album?) -> ()) {
     

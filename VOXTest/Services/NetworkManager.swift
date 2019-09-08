@@ -9,6 +9,9 @@
 import Foundation
 
 final class NetworkManager {
+  private init() {}
+  static let shared = NetworkManager()
+  
   
   // https://theaudiodb.com/api/v1/json/1/searchalbum.php?s=post_malone&a=stoney
   

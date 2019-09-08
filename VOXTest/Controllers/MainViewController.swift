@@ -17,7 +17,7 @@ class MainViewController: UIViewController {
   @IBOutlet weak var albumimageview: UIImageView!
   @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
   
-  private let fetcher = NetworkDataFetcher()
+  private let fetcher = NetworkDataFetcher.shared
   private let persistenceManager = PersistenceManager.shared
   
   private var artistName = ""
@@ -66,6 +66,7 @@ class MainViewController: UIViewController {
         let when = DispatchTime.now() + 1.5
         DispatchQueue.main.asyncAfter(deadline: when) {
           alertContoller.dismiss(animated: true, completion: nil)
+          self?.activityIndicator.stopAnimating()
         }
         return }
       

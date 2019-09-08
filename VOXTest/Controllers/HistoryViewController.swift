@@ -67,12 +67,7 @@ extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    
-    let object = history[indexPath.row]
-    
-    let mainViewController: MainViewController = MainViewController.loadFromStoryboard()
-    
-
+    tableView.deselectRow(at: indexPath, animated: true)
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
