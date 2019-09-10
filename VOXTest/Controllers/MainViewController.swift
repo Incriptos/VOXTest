@@ -40,6 +40,7 @@ class MainViewController: UIViewController {
     searchTextField.delegate = self
     searchButton.isEnabled = false
     activityIndicator.stopAnimating()
+    self.hideKeyboardWhenTappedAround()
     
   }
   
@@ -61,7 +62,7 @@ class MainViewController: UIViewController {
     fetcher.fetchAlbums(artistName: artistName, albumName: albumName) { [weak self] (result) in
       
       guard let resultData = result else {
-        let alertContoller = UIAlertController(title: "Error!", message: "Search error", preferredStyle: .alert)
+        let alertContoller = UIAlertController(title: "Error!", message: "Search error.", preferredStyle: .alert)
         self?.present(alertContoller, animated: true)
         let when = DispatchTime.now() + 1.5
         DispatchQueue.main.asyncAfter(deadline: when) {
